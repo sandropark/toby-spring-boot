@@ -16,15 +16,18 @@ public class HelloApp {
     public static void main(String[] args) {
         TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
         WebServer webServer = serverFactory.getWebServer(servletContext -> {
+            HelloController helloController = new HelloController();
             servletContext.addServlet("frontController", new HttpServlet() {
                 @Override
                 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
                     if (req.getRequestURI().equals("/hello") && req.getMethod().equals(HttpMethod.GET.name())) {
                         String name = req.getParameter("name");     // 파라미터를 받는다.
 
+                        String ret = helloController.hello(name);
+
                         resp.setStatus(HttpStatus.OK.value());
                         resp.setContentType(MediaType.TEXT_PLAIN_VALUE);
-                        resp.getWriter().print("Hello " + name);
+                        resp.getWriter().print(ret);
                     } else if (req.getRequestURI().equals("/user")) {
                         //
                     } else {
