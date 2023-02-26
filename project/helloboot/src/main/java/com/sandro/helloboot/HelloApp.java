@@ -2,6 +2,8 @@ package com.sandro.helloboot;
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +18,11 @@ public class HelloApp {
             servletContext.addServlet("hello", new HttpServlet() {
                 @Override
                 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                    resp.setStatus(HttpServletResponse.SC_OK);
-                    resp.setContentType("text/plain");
-                    resp.getWriter().print("Hello Servlet");
+                    String name = req.getParameter("name");     // 파라미터를 받는다.
+
+                    resp.setStatus(HttpStatus.OK.value());
+                    resp.setContentType(MediaType.TEXT_PLAIN_VALUE);
+                    resp.getWriter().print("Hello " + name);
                 }
             }).addMapping("/hello");
         });
