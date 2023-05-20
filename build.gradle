@@ -23,6 +23,8 @@ subprojects {
 	apply plugin: 'io.spring.dependency-management'
 	apply plugin: boot
 
+	sourceCompatibility = '11'
+
 	repositories {
 		mavenCentral()
 	}
@@ -36,6 +38,7 @@ subprojects {
 	dependencies {
 		implementation 'org.springframework.boot:spring-boot-starter'
 		implementation 'org.springframework.boot:spring-boot-starter-web'
+
 		testImplementation "$boot:spring-boot-starter-test"
 	}
 
