@@ -20,7 +20,7 @@ class HelloApiTest {
 
         assertThat(res.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(res.getHeaders().getContentType().toString()).contains(TEXT_PLAIN_VALUE);
-        assertThat(res.getBody()).isEqualTo("Hello " + name);
+        assertThat(res.getBody()).isEqualTo("*Hello " + name + "*");
     }
 
     @Test
