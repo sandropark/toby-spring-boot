@@ -1,0 +1,2 @@
+com.sandro.config.autoconfig.DispatcherServletConfig
+com.sandro.config.autoconfig.TomcatWebServerConfig
