@@ -1,5 +1,6 @@
 package com.sandro.helloboot;
 
+import com.sandro.config.MySpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
 @MySpringBootApplication

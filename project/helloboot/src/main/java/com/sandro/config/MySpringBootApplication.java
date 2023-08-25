@@ -1,4 +1,4 @@
-package com.sandro.helloboot;
+package com.sandro.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,5 +12,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @ComponentScan
 @Configuration
+@EnableMyAutoConfiguration
+//@SpringBootConfiguration
 public @interface MySpringBootApplication {
 }
