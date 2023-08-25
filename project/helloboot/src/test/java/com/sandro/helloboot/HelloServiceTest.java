@@ -9,10 +9,10 @@ class HelloServiceTest {
     @Test
     void simpleHelloService() throws Exception {
         SimpleHelloService helloService = new SimpleHelloService();
-        String name = "Test";
-        String ret = helloService.sayHello(name);
 
-        assertThat(ret).isEqualTo("Hello " + name);
+        String ret = helloService.sayHello("Test");
+
+        assertThat(ret).isEqualTo("Hello Test");
     }
 
     @Test
