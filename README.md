@@ -54,7 +54,12 @@
   
     최종적으로는 `@MySpringBootApplication`에 `@EnableMyAutoConfiguration`를 달면 `DispatcherServletConfig`와 `TomcatWebServerConfig`가 빈으로 등록된다. 이런 식으로 애너테이션을 달면서 필요한 빈을 쉽게 등록할 수 있다. 
 
+## Environment 프로퍼티
 
+프로퍼티의 우선순위는 다음과 같다. 
+1. SystemProperty : VM Option으로 자바 실행 시 -D 옵션으로 주는 값이다.
+2. 환경 변수 : Environment Variables 에 지정
+3. .properties 파일
 
 
 
