@@ -1,4 +1,5 @@
 com.sandro.config.autoconfig.PropertyPlaceholderConfig
+com.sandro.config.autoconfig.ServerPropertiesConfig
 com.sandro.config.autoconfig.DispatcherServletConfig
 com.sandro.config.autoconfig.TomcatWebServerConfig
 com.sandro.config.autoconfig.JettyWebServerConfig
