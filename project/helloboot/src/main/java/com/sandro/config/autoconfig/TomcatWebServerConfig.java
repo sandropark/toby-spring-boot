@@ -12,14 +12,18 @@ import org.springframework.context.annotation.Bean;
 @MyAutoConfiguration
 public class TomcatWebServerConfig {
 
-    @Value("${contextPath}")
+    // 기본값을 지정하기 위해서는 ':' 을 사용하면 된다.
+    @Value("${contextPath:}")
     String contextPath;
+    @Value("${port:8080}")
+    int port;
 
     @ConditionalOnMissingBean  // 해당 타입의 빈이 등록되어 있는 경우, 아래 빈 메서드는 실행되지 않는다.
     @Bean(name = "tomcatWebServerFactory")
     public ServletWebServerFactory servletWebServerFactory() {
         TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
         serverFactory.setContextPath(contextPath);
+        serverFactory.setPort(port);
         return serverFactory;
     }
 }

@@ -1,3 +1,4 @@
 spring.output.ansi.enabled: always
 
+port: 9090
 contextPath: /app
