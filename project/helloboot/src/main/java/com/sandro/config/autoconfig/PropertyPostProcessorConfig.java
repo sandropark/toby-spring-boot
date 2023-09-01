@@ -19,13 +19,12 @@ public class PropertyPostProcessorConfig {
             @Override
             public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
                 MyConfigurationProperties annotation = AnnotationUtils.findAnnotation(bean.getClass(), MyConfigurationProperties.class);
-                if (annotation == null)
-                    return bean;
+                if (annotation == null) return bean;
 
                 Map<String, Object> attrs = AnnotationUtils.getAnnotationAttributes(annotation);
                 String prefix = (String) attrs.get("prefix");
 
-                return Binder.get(env).bindOrCreate(prefix, ServerProperties.class);
+                return Binder.get(env).bindOrCreate(prefix, bean.getClass());
             }
         };
     }

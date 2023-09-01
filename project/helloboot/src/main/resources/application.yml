@@ -1,5 +1,0 @@
-spring.output.ansi.enabled: always
-
-server:
-  contextPath: /app
-  port: 9090

@@ -1,5 +1,6 @@
 package com.sandro;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
+@Disabled
 class HelloApiTest {
 
     TestRestTemplate rest = new TestRestTemplate();

@@ -15,10 +15,10 @@ public class TomcatWebServerConfig {
 
     @ConditionalOnMissingBean  // 해당 타입의 빈이 등록되어 있는 경우, 아래 빈 메서드는 실행되지 않는다.
     @Bean(name = "tomcatWebServerFactory")
-    public ServletWebServerFactory servletWebServerFactory(ServerProperties properties) {
+    public ServletWebServerFactory servletWebServerFactory(ServerProperties prop) {
         TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
-        serverFactory.setContextPath(properties.getContextPath());
-        serverFactory.setPort(properties.getPort());
+        serverFactory.setContextPath(prop.getContextPath());
+        serverFactory.setPort(prop.getPort());
         return serverFactory;
     }
 }
